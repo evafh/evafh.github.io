@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Eva Fitriyaningsih</title>
+
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <main class="detail-page">
+    <article class="detail-content">
+
+      <a href="./index.html" class="back-btn">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <span>Back to Home</span>
+      </a>
+
+      <header>
+        <h2 class="h2 article-title">Sentiment Analysis Model for
+            Indonesia's 2024 Presidential Candidates
+            Using SVM</h2>
+      </header>
+
+      <section class="about-text">
+          <p>
+            The 2024 general election in Indonesia has become a hot topic on social media, especially on Twitter, 
+            which has millions of active users. In this project, me and my Data Mining course teammates analyze 
+            Twitter users' sentiments towards the presidential and vice-presidential candidates using the Support 
+            Vector Machine (SVM) method. The aim of this research is to classify sentiments into positive, negative, 
+            or neutral, thus providing insights into public perceptions of each candidate pair.
+          </p>
+        </section>
+
+      <section class="timeline">
+        <div class="title-wrapper">
+          <div class="icon-box">
+            <ion-icon name="book-outline"></ion-icon>
+          </div>
+          <h3 class="h3">Dataset</h3>
+        </div>
+        <div class="image-gallery">
+          <img src="./assets/images/project2_datasetanies.jpeg" alt="Deskripsi Gambar 1">
+          <img src="./assets/images/project2_datasetprabowo.jpeg" alt="Deskripsi Gambar 2">
+          <img src="./assets/images/project2_datasetganjar.jpeg" alt="Deskripsi Gambar 3">
+          
+          <img src="./assets/images/project2_datasetimin.jpeg" alt="Deskripsi Gambar 4">
+          <img src="./assets/images/project2_datasetmahfud.jpeg" alt="Deskripsi Gambar 5">
+          <img src="./assets/images/project2_datasetgibran.jpeg" alt="Deskripsi Gambar 6">
+        </div>
+
+        <ol class="about-text">
+          <p>
+            The data was collected from Twitter during the period from 22 January to 20 March 2024, using scraping 
+            techniques focused on six keywords related to the names of the candidate pairs.
+          </p>
+        </ol>
+      </section>
+
+      <section class="timeline">
+        <div class="title-wrapper">
+          <div class="icon-box">
+            <ion-icon name="book-outline"></ion-icon>
+          </div>
+          <h3 class="h3">Steps</h3>
+        </div>
+        <ol class="timeline-list">
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Data Scraping</h4>
+            <div class="image-gallery">
+                <img src="./assets/images/project2_scraping1.jpeg" alt="Deskripsi Gambar 1">
+                <img src="./assets/images/project2_scraping2.jpeg" alt="Deskripsi Gambar 2">
+            </div>
+            <p class="timeline-text">
+              Data was collected through scraping using the Nitter library and Apify web, resulting in approximately 1300-1400 tweets per candidate after removing duplicate data.
+            </p>
+          </li>
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Data Cleaning</h4>
+            <p class="timeline-text">
+              Several issues were identified during data preprocessing, including irrelevant data (out of context), duplicate records, and entries with null values. 
+              These problems occurred due to various factors, such as exploiters taking advantage of trending hashtags, Twitter buzzers generating noise, and usernames 
+              that are identical to the candidates' names.
+            </p>
+            <div class="image-gallery">
+                <img src="./assets/images/project2_cleaning1.jpeg" alt="Deskripsi Gambar 1">
+                <img src="./assets/images/project2_cleaning2.jpeg" alt="Deskripsi Gambar 2">
+            </div>
+            <p class="timeline-text">
+              To address these issues, the data was cleaned by removing irrelevant entries, eliminating duplicate records, and handling null values appropriately.
+            </p>
+            <div class="image-gallery">
+                <img src="./assets/images/project2_cleandata.png" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              As a result, the number of records for each candidate was reduced: 
+              Candidate 01 from 1371 to 1286, Candidate 02 from 1403 to 1199, and 
+              Candidate 03 from 1406 to 1286.
+            </p>
+          </li>
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Data Labelling</h4>
+            <p class="timeline-text">
+              The labeling process was performed on three sentiment classes: positive, negative, and neutral. 
+              Three labeling methods were applied: manual labeling, using the VADER Lexicon tool, and utilizing a 
+              model from Hugging Face. Below are the results:
+            </p>
+            <h4 class="h4 timeline-item-title">Candidate 01</h4>
+            <div class="image-gallery1">
+                <img src="./assets/images/label_1.png" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              The labeling results for Candidate 01 show that both manual labeling and the VADER Lexicon indicate 
+              predominantly positive sentiments, while the Hugging Face model reveals a significant amount of negative 
+              sentiment.
+            </p>
+            <h4 class="h4 timeline-item-title">Candidate 02</h4>
+            <div class="image-gallery1">
+                <img src="./assets/images/label_2.png" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              For Candidate 02, the results indicate mostly negative sentiments with both manual labeling and the 
+              Hugging Face model, whereas the VADER Lexicon shows a predominance of positive sentiment.
+            </p>
+            <h4 class="h4 timeline-item-title">Candidate 03</h4>
+            <div class="image-gallery1">
+                <img src="./assets/images/label_3.png" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              As for Candidate 03, both manual labeling and the VADER Lexicon reflect mostly positive sentiments. 
+              However, the Hugging Face model presents a more balanced distribution, with neutral sentiment being 
+              slightly more prominent.
+            </p>
+
+            <br><p class="timeline-text">
+              After exploring and comparing the three techniques, manual labeling was chosen.
+              It was considered more effective because it allows for more accurate contextual understanding, 
+              better handles ambiguity, offers flexibility and customization according to the specific needs of the 
+              project, and produces higher-quality data.
+            </p>
+          </li>
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Tokenizing</h4>
+            <p class="timeline-text">
+              Tokenizing is splitting text into smaller units called tokens. There are several steps before 
+              and after tokenization, which includes:
+            </p>
+            <br><p class="timeline-text">
+              Casefolding, ensuring no null values, converting to lowercase, and removing numbers, 
+              punctuation, emoticons, and extra spaces.
+            </p>
+            <div class="image-gallery1">
+                <img src="./assets/images/casefolding.jpeg" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              Tokenizing, using word_tokenize from the nltk library to split sentences into word lists.
+            </p>
+            <div class="image-gallery2">
+                <img src="./assets/images/tokenize.jpeg" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              Filtering, removing unimportant words with StopWordRemoverFactory from Sastrawi.
+            </p>
+            <div class="image-gallery2">
+                <img src="./assets/images/filtering.jpeg" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              Stemming, converting words to their root forms using the Sastrawi library.
+            </p>
+            <div class="image-gallery2">
+                <img src="./assets/images/stemming.jpeg" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              Data Exploration, visualizing token frequency and word cloud. Here are the results:
+            </p>
+            <br><p class="timeline-text">
+              Candidate 01
+            </p>
+            <div class="image-gallery1">
+                <img src="./assets/images/wordcloud01.png" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              Candidate 02
+            </p>
+            <div class="image-gallery1">
+                <img src="./assets/images/wordcloud02.png" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              Candidate 03
+            </p>
+            <div class="image-gallery1">
+                <img src="./assets/images/wordcloud03.png" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              After exploration, we discovered several words that provided little meaningful 
+              information. As a result, additional words such as "memang, ia, pas, kok, sih, kan, 
+              dr, si" and others were added to the stopword list.
+            </p>
+            <div class="image-gallery1">
+                <img src="./assets/images/extend_stopwords.jpeg" alt="Deskripsi Gambar 1">
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Feature Extraction</h4>
+            <p class="timeline-text">
+              For feature extraction, the method used is TF-IDF (Term Frequency-Inverse Document Frequency), 
+              which converts text data into numerical values based on word importance. TF measures how often a 
+              word appears in a document, while IDF reduces the weight of words that occur frequently across 
+              many documents, emphasizing more meaningful terms.
+            </p>
+            <br><p class="timeline-text">
+              Data before TF-IDF
+            </p>
+            <div class="image-gallery1">
+                <img src="./assets/images/before_tfidf.jpeg" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              Data after TF-IDF
+            </p>
+            <div class="image-gallery1">
+                <img src="./assets/images/after_tfidf.jpeg" alt="Deskripsi Gambar 1">
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Modeling Using SVM Algorithm</h4>
+            <p class="timeline-text">
+              Modeling is performed using Support Vector Machine (SVM). SVM works by finding the optimal 
+              hyperplane that separates data points from different classes with the largest possible margin. 
+              It is effective for sentiment analysis because it performs well with high-dimensional data and 
+              helps avoid overfitting, making it suitable for text classification tasks.
+            </p>
+            <div class="image-gallery2">
+                <img src="./assets/images/modeling.jpeg" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              After building the model, hyperparameter tuning is conducted. Hyperparameter tuning refers to 
+              the process of finding the best combination of parameters to improve model performance. 
+              This is done using GridSearchCV, with parameters C, gamma, and kernel set to rbf.
+            </p>
+            <div class="image-gallery2">
+                <img src="./assets/images/tuning.jpeg" alt="Deskripsi Gambar 1">
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">Model Evaluation</h4>
+            <p class="timeline-text">
+              Model evaluation is performed using cross-validation scores and a confusion matrix.
+            </p>
+            <br><p class="timeline-text">
+              Cross-Validation, which tests the model`s consistency and generalization on unseen 
+              data. The average accuracy from cross-validation indicates how well the model generalizes 
+              patterns from the training data to the test data. Meanwhile, the standard deviation of accuracy 
+              shows how consistent and stable the model's performance is.
+            </p>
+            <div class="image-gallery1">
+                <img src="./assets/images/cross_validation.jpeg" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              Confusion Matrix, a table used to evaluate the performance of a model by comparing predicted 
+              values with actual values. From the matrix, several metrics can be derived:Accuracy measures 
+              how often the model makes correct predictions. Precision indicates how many of the predicted 
+              positive cases are truly relevant. Recall measures how well the model identifies all actual 
+              positive cases, while F1 Score represents the balance between precision and recall.
+            </p>
+            <div class="image-gallery1">
+                <img src="./assets/images/confusion_matrix.jpeg" alt="Deskripsi Gambar 1">
+            </div>
+            <p class="timeline-text">
+              Based on the evaluation results, the model demonstrates good performance in predicting sentiment.
+            </p>
+          </li>
+        </ol>
+      </section>
+    </article>
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
